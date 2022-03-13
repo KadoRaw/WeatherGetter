@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Getter</title>
+    <script src="scripts/app.js" defer></script>
+    <link rel="stylesheet" href="styles/app.css" />
+  </head>
+  <body>
+    <div id="grid">
+      <div id="header-div">
+        <h1>Weather Getter</h1>
+      </div>
+      <div id="search-div">
+        <input id="search" type="text" placeholder="Şehir giriniz" />
+        <button type="submit" id="searchbutton">
+          <img src="img/search.svg" alt="search svg" width="22" height="22" />
+        </button>
+      </div>
+      <div id="clock-div">
+        <img src="img/clock.svg" alt="clock svg" width="22" height="22" />
+        <p></p>
+      </div>
+      <div id="location-div">
+        <img src="img/location.svg" alt="search svg" width="22" height="22" />
+        <p></p>
+      </div>
+      <div id="weather-info-div" style="display: none;">
+        <div id="today">
+        <div id="date"></div>
+        <div id="weather-time"></div>
+        <div id="condition"></div>
+        <div id="maxtempature"></div>
+        <div id="mintempature"></div>
+        <div id="rainchance"></div>
+        <div id="suntime">
+          <div id="sunrise">
+            <img src="img/sunrise.svg" alt="search svg" width="22" height="22" />
+          <div>
+            
+          </div> 
+          <p>sunrise</p>
+          </div>
+          <div id="sunset">
+            <img src="img/sunset.svg" alt="search svg" width="22" height="22" />
+            <div></div> 
+            <p>sunset</p>
+            </div>
+        </div>
+        </div>
+      </div>
+      <div id="forecast-3days-div" style="display: none;">
+        <div id="day1">
+          <div id="date"></div>
+          <div id="condition"></div>
+          <div id="maxtempature"></div>
+          <div id="mintempature"></div>
+          <div id="rainchance"></div>
+          <div id="suntime">
+            <div id="sunrise">
+              <img src="img/sunrise.svg" alt="search svg" width="22" height="22" />
+              <div></div> 
+              <p>sunrise</p>
+            </div>
+            <div id="sunset">
+              <img src="img/sunset.svg" alt="search svg" width="22" height="22" />
+              <div></div> 
+              <p>sunset</p>
+              </div>
+          </div>
+        </div>
+        <div id="day2">
+          <div id="date"></div>
+          <div id="condition"></div>
+          <div id="maxtempature"></div>
+          <div id="mintempature"></div>
+          <div id="rainchance"></div>
+          <div id="suntime">
+            <div id="sunrise">
+              <img src="img/sunrise.svg" alt="search svg" width="22" height="22" />
+            <div>
+              
+            </div> 
+            <p>sunrise</p>
+            </div>
+            <div id="sunset">
+              <img src="img/sunset.svg" alt="search svg" width="22" height="22" />
+              <div></div> 
+              <p>sunset</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div id="otherinfos-div" style="display: none;"">
+        <div id="windspeed">
+          <img src="img/windspeed.svg" alt="search svg" width="22" height="22" />
+          <div id="text"></div>
+        </div>
+        <div id="pressure">
+          <img src="img/pressure.svg" alt="search svg" width="22" height="22" />
+          <div id="text"></div>
+        </div>
+        <div id="humidity">
+          <img src="img/humidity.svg" alt="search svg" width="22" height="22" />
+          <div id="text"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&family=Roboto:wght@700;900&display=swap");
+
+@mixin borderStyles {
+  background: #f6ae2d;
+  border: 1px solid #eff2ef;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+@mixin cardInner {
+  #date {
+    padding-top: 20px;
+    font-weight: 700;
+    color: $red-color;
+  }
+  #weather-time {
+    margin-top: -5px;
+    color: $dark-color;
+  }
+  #condition {
+    margin-top: 170px;
+    font-weight: 700;
+    color: $honey-color;
+  }
+  #maxtempature {
+    margin-top: 10px;
+    font-weight: 700;
+    color: $dark-color;
+  }
+  #mintempature {
+    margin-top: 10px;
+    font-weight: 700;
+    color: $dark-color;
+  }
+  #rainchance {
+    margin-top: 10px;
+    font-weight: 500;
+    color: $dark-color;
+    opacity: 0.8;
+  }
+  #suntime {
+    margin-top: 100px;
+    display: flex !important;
+    flex-direction: row reverse !important;
+    justify-content: space-evenly;
+    div {
+      font-size: 14px;
+    }
+    p {
+      margin-top: -8px;
+      color: $dark-color;
+      font-size: 12px !important;
+      font-weight: 600 !important;
+    }
+  }
+}
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+$forwhite-color: #fffce8;
+$primary-color: #eff2ef;
+$dark-color: #2f4858;
+$blue-color: #a0d2db;
+$honey-color: #f6ae2d;
+$red-color: #d8315b;
+
+body {
+  background-color: $primary-color;
+  font-family: "Poppins", sans-serif;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(10, 60px);
+  column-gap: 27px;
+  row-gap: 18px;
+  margin: 2rem;
+  grid-template-areas:
+    "header header header header"
+    "header header header header"
+    "search search clock location"
+    "weather forecast forecast others"
+    "weather forecast forecast others"
+    "weather forecast forecast others"
+    "weather forecast forecast others"
+    "weather forecast forecast others"
+    "weather forecast forecast others"
+    "weather forecast forecast others";
+
+  #header-div {
+    grid-area: header;
+    border: 1px solid $honey-color;
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $red-color;
+    h1 {
+      font-weight: 700;
+      color: $forwhite-color;
+    }
+  }
+  #search-div {
+    grid-area: search;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: stretch;
+    width: 100%;
+    #search {
+      border: 2px solid $blue-color;
+      box-sizing: border-box;
+      border-radius: 10px 0 0 10px;
+      outline: none;
+      font-family: "Poppins", sans-serif;
+      flex-grow: 1;
+    }
+    #searchbutton {
+      border: 2px solid $blue-color;
+      box-sizing: border-box;
+      text-align: center;
+      border-radius: 0 10px 10px 0;
+      background-color: $blue-color;
+      justify-self: end;
+      width: 60px;
+      cursor: pointer;
+    }
+  }
+  #clock-div {
+    grid-area: clock;
+    @include borderStyles();
+    @include flexCenter();
+  }
+  #location-div {
+    grid-area: location;
+    @include borderStyles();
+    @include flexCenter();
+  }
+  #weather-info-div {
+    display: flex;
+    grid-area: weather;
+    background: $forwhite-color;
+    justify-content: center;
+    align-content: center;
+    border: 1px solid #d8315ba9;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+      rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    #today {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      text-align: center;
+      @include cardInner();
+      #condition {
+        margin-top: 170px !important;
+      }
+      #suntime {
+        margin-top: 100px;
+        display: flex !important;
+        flex-direction: column reverse !important;
+        justify-content: space-between !important;
+
+        div {
+          margin-right: 6px;
+          margin-left: 6px;
+        }
+      }
+    }
+  }
+  #forecast-3days-div {
+    grid-area: forecast;
+    background: $primary-color;
+    border-radius: 15px;
+  }
+  #otherinfos-div {
+    grid-area: others;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #927be5;
+    color: #f3efe2;
+    font-weight: 500;
+    border-radius: 15px;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
+      rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+  }
+}
+::placeholder {
+  color: #2f4858;
+  opacity: 0.8;
+}
+.searchBox {
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  padding: 1rem;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 400px;
+}
+.searchResult {
+  border-bottom: solid rgba(5, 5, 5, 0.6);
+  margin: 3px;
+}
+#forecast-3days-div {
+  @mixin cards {
+    background-color: #fffce8;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column !important;
+    align-self: center;
+    justify-content: flex-start;
+    width: 47%;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  }
+
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  text-align: center;
+  #day1 {
+    @include cards();
+    @include cardInner();
+  }
+  #day2 {
+    @include cards();
+    @include cardInner();
+  }
+}
